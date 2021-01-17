@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+          <record id="visitor_management_visitor_report_detail" model="ir.ui.view">
+            <field name="name">visitor_management.report.visitor</field>
+            <field name="model">visitor_management.visitor.report</field>
+            <field name="arch" type="xml">
+                <form string="appointment">
+                    <group class="oe_title">
+                        <field name="start_date" />
+                        <field name="end_date" />
+                        <field name="visitor_name" />
+                    </group>
+                    <footer>
+
+                        <button name="visitor_management_visitor_report" string="Print" type="object" class="btn-primary"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="visitor_management_generate_visitor_report" model="ir.actions.act_window">
+            <field name="name">generate report visitor</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">visitor_management.visitor.report</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="visitor_management_visitor_report_detail"/>
+            <field name="target">new</field>
+        </record>
+
+</odoo>

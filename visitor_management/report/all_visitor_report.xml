@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+    <template id="all_visitor_report_w_s_e_d">
+                <t t-call="web.html_container">
+                    <t t-call="web.external_layout">
+
+                        <hr/>
+                        <br/>
+
+
+                        <t t-foreach="tst['emp']" t-as="emn">
+                            <table class="table" style="border: .5px solid black important;">
+                                <tr>
+                                    <td width="120%">
+                                       <p t-field="emn.visitor_name"/>
+                                    </td>
+                                </tr>
+                                    <tr>
+                                        <td width="30%">
+                                            <p>Date</p>
+                                        </td>
+                                        <td width="30%">
+                                            <p>CheckIn</p>
+                                        </td>
+                                        <td width="30%">
+                                            <p>Checkout</p>
+                                        </td>
+
+                                    </tr>
+                                <t t-foreach="checks" t-as="cio">
+                                    <t t-if ='emn.id==cio.visitor_name.id'>
+                                        <tr>
+                                            <td>
+                                                <p t-field="cio.check_in_time" t-options="{&quot;format&quot;: &quot;MM-dd-yyyy&quot;}" />
+                                            </td>
+                                            <td>
+                                                <p t-field="cio.check_in_time" t-options="{&quot;format&quot;: &quot;HH:mm&quot;}"/>
+                                            </td>
+                                            <td>
+                                                <p t-field="cio.check_out_time" t-options="{&quot;format&quot;: &quot;HH:mm&quot;}"/>
+                                            </td>
+
+                                        </tr>
+
+                                    </t>
+                                </t>
+                                <br/>
+                                <br/>
+                                <br/>
+
+                            </table>
+
+                        </t>
+
+
+
+
+<!--                            <table class="table" style="border: 3px solid black !important;">-->
+<!--                                <tr>-->
+<!--                                    <td width="30%">-->
+<!--                                        <p>Date</p>-->
+<!--                                    </td>-->
+<!--                                    <td width="30%">-->
+<!--                                        <p>CheckIn</p>-->
+<!--                                    </td>-->
+<!--                                    <td width="30%">-->
+<!--                                        <p>Checkout</p>-->
+<!--                                    </td>-->
+<!--                                    <td width="30%">-->
+<!--                                        <p>Name</p>-->
+<!--                                    </td>-->
+<!--                                </tr>-->
+<!--                                <t t-foreach="checks" t-as="cio">-->
+<!--                                    <tr>-->
+<!--                                        <td>-->
+<!--                                            <p t-field="cio.check_in_time" t-options="{&quot;format&quot;: &quot;MM-dd-yyyy&quot;}" />-->
+<!--                                        </td>-->
+<!--                                        <td>-->
+<!--                                            <p t-field="cio.check_in_time" t-options="{&quot;format&quot;: &quot;HH:mm&quot;}"/>-->
+<!--                                        </td>-->
+<!--                                        <td>-->
+<!--                                            <p t-field="cio.check_out_time" t-options="{&quot;format&quot;: &quot;HH:mm&quot;}"/>-->
+<!--                                        </td>-->
+<!--                                        <td>-->
+<!--                                            <p t-field="cio.employee_name.e_name"/>-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
+<!--                                </t>-->
+<!--                        </table>-->
+
+                        </t>
+
+                    </t>
+
+    </template>
+
+
+
+</odoo>

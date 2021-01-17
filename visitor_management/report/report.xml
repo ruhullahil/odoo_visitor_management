@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+     <record id="individual_employee_report_s2e_date" model="ir.actions.report">
+        <field name="name"> Individual Employee report with start and end</field>
+        <field name="model">visitor_management.employee</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">visitor_management.indi_employee_report_w_s_e_d</field>
+    </record>
+
+    <record id="all_employee_report_s2e_date" model="ir.actions.report">
+        <field name="name"> All Employee report with start and end</field>
+        <field name="model">visitor_management.employee</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">visitor_management.all_employee_report_w_s_e_d</field>
+    </record>
+
+
+    #all report of visitor
+
+     <record id="individual_visitor_report_s2e_date" model="ir.actions.report">
+        <field name="name"> Individual Visitor report with start and end</field>
+        <field name="model">visitor_management.visitor</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">visitor_management.indi_visitor_report_w_s_e_d</field>
+    </record>
+
+    <record id="all_visitor_report_s2e_date" model="ir.actions.report">
+        <field name="name"> All Visitor report with start and end</field>
+        <field name="model">visitor_management.visitor</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">visitor_management.all_visitor_report_w_s_e_d</field>
+    </record>
+
+
+
+
+
+
+
+</odoo>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+      <record id="employee_time_tree" model="ir.ui.view">
+            <field name="name">visitor_management.timeslot.tree</field>
+            <field name="model">visitor_management.datetime.slot</field>
+            <field name="arch" type="xml">
+                <tree string="patient">
+
+                    <field name="date"/>
+                    <field name="employee_slot"/>
+                    <field name="start_time"/>
+
+                </tree>
+            </field>
+      </record>
+
+
+     <record id="employee_time_form" model="ir.ui.view">
+            <field name="name">visitor_management.timeslot.form</field>
+            <field name="model">visitor_management.datetime.slot</field>
+            <field name="arch" type="xml">
+                <form string="Employee slot">
+                <sheet>
+                    <group>
+                         <group >
+                            <field name="date"/>
+                            <field name="start_time" widget="float_time"/>
+
+                        </group>
+                        <group>
+                            <field name="end_time" widget="float_time"/>
+                            <field name="employee_slot" widget="many2many_tags"/>
+
+
+                        </group>
+                    </group>
+                </sheet>
+<!--                    <div class="oe_chatter">-->
+<!--+                       <field name="message_follower_ids" widget="mail_followers"/>-->
+<!--+                       <field name="message_ids" widget="mail_thread"/>-->
+<!--                        <field name = "activity_ids" widget ="mail_activity"/>-->
+<!--+                   </div>-->
+                </form>
+            </field>
+        </record>
+
+
+    <record id="timeslot_action" model="ir.actions.act_window">
+            <field name="name">Visitor Management employee Timeslot</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">visitor_management.datetime.slot</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p>
+                create new timeslot for employee
+              </p>
+            </field>
+        </record>
+
+
+
+</odoo>

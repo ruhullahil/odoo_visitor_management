@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+
+      <record id="visitor_check_in_tree" model="ir.ui.view">
+            <field name="name">visitor_management.visitor.tree</field>
+            <field name="model">visitor_management.visitor.checkincheckout</field>
+            <field name="arch" type="xml">
+                <tree string="patient">
+
+                    <field name="visitor_name"/>
+                    <field name="check_in_time"/>
+                    <field name="check_out_status"/>
+
+                </tree>
+            </field>
+      </record>
+
+
+     <record id="visitor_check_in_form" model="ir.ui.view">
+            <field name="name">visitor_management.visitor.form</field>
+            <field name="model">visitor_management.visitor.checkincheckout</field>
+            <field name="arch" type="xml">
+                <form string="patient">
+
+                <sheet>
+                         <group >
+                            <field name="visitor_name"/>
+
+                            <field name="check_in_time" invisible="1"/>
+                        </group>
+
+                </sheet>
+<!--                    <div class="oe_chatter">-->
+<!--+                       <field name="message_follower_ids" widget="mail_followers"/>-->
+<!--+                       <field name="message_ids" widget="mail_thread"/>-->
+<!--                        <field name = "activity_ids" widget ="mail_activity"/>-->
+<!--+                   </div>-->
+                </form>
+            </field>
+        </record>
+
+<!--      <record id="patient_search" model="ir.ui.view">-->
+<!--            <field name="name">hospital.patient.search</field>-->
+<!--            <field name="model">hospital.patient</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <search string="patient">-->
+
+<!--                    <field name="name" filter_domain = "['|',('name','ilike',self),('p_id','ilike',self)]"/>-->
+<!--                    <field name="name"/>-->
+<!--                    <field name="p_id"/>-->
+<!--                    <separator/>-->
+<!--                    <filter string = "Male" name = "male" domain = "[('gender', '=','male')]"/>-->
+<!--                    <filter string = "Female" name = "female" domain = "[('gender', '=','female')]"/>-->
+<!--                    <group expand = "0" string = "Group By">-->
+<!--                        <filter string="Gender" name="gender" context = "{'group_by':'gender'}"/>-->
+<!--                    </group>-->
+
+<!--                </search>-->
+<!--            </field>-->
+<!--      </record>-->
+
+
+
+    <record id="visitor_check_in_action" model="ir.actions.act_window">
+            <field name="name">Visitor Management check in visitor </field>
+            <field name="type">ir.actions.act_window</field>
+
+            <field name="res_model">visitor_management.visitor.checkincheckout</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                create new checkin
+              </p>
+            </field>
+        </record>
+
+
+
+</odoo>
