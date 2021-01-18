@@ -57,39 +57,6 @@
 
 
 
-<!--                            <table class="table" style="border: 3px solid black !important;">-->
-<!--                                <tr>-->
-<!--                                    <td width="30%">-->
-<!--                                        <p>Date</p>-->
-<!--                                    </td>-->
-<!--                                    <td width="30%">-->
-<!--                                        <p>CheckIn</p>-->
-<!--                                    </td>-->
-<!--                                    <td width="30%">-->
-<!--                                        <p>Checkout</p>-->
-<!--                                    </td>-->
-<!--                                    <td width="30%">-->
-<!--                                        <p>Name</p>-->
-<!--                                    </td>-->
-<!--                                </tr>-->
-<!--                                <t t-foreach="checks" t-as="cio">-->
-<!--                                    <tr>-->
-<!--                                        <td>-->
-<!--                                            <p t-field="cio.check_in_time" t-options="{&quot;format&quot;: &quot;MM-dd-yyyy&quot;}" />-->
-<!--                                        </td>-->
-<!--                                        <td>-->
-<!--                                            <p t-field="cio.check_in_time" t-options="{&quot;format&quot;: &quot;HH:mm&quot;}"/>-->
-<!--                                        </td>-->
-<!--                                        <td>-->
-<!--                                            <p t-field="cio.check_out_time" t-options="{&quot;format&quot;: &quot;HH:mm&quot;}"/>-->
-<!--                                        </td>-->
-<!--                                        <td>-->
-<!--                                            <p t-field="cio.employee_name.e_name"/>-->
-<!--                                        </td>-->
-<!--                                    </tr>-->
-<!--                                </t>-->
-<!--                        </table>-->
-
                         </t>
 
                     </t>

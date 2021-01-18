@@ -27,6 +27,7 @@
     'data': [
 
         'security/security.xml',
+        'report/visitor_id_card.xml',
         'report/report.xml',
         'report/all_employee_report.xml',
         'report/all_visitor_report.xml',

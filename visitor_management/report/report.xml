@@ -32,6 +32,15 @@
         <field name="report_name">visitor_management.all_visitor_report_w_s_e_d</field>
     </record>
 
+    #visitor id-card
+
+    <report id ="visitor_id_card"
+            string="Id Card"
+            model="visitor_management.visitor"
+            report_type="qweb-pdf"
+            name="visitor_management.id_card_visitor"
+            file="visitor_management.visitor_id_card"/>
+
 
 
 

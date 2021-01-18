@@ -54,3 +54,4 @@ class VisitorCheckinCheckoutTime(models.Model):
     check_out_time = fields.Datetime(string="Check out Time")
     status = fields.Boolean(string='Is checkout ', default=False)
     check_out_status = fields.Selection(check_out_stat)
+    extra_services = fields.One2many('visitor_management.extra_services', 'check_in_slot', string='Extra Services')
