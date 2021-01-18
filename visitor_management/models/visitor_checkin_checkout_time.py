@@ -43,6 +43,12 @@ class VisitorCheckinCheckoutTime(models.Model):
             else:
                 raise ValidationError("please check in first")
 
+    def _check_out_viditor_corn(self):
+        print("visitor corn work")
+        chekout_visitor_not = self.search([('status', '=', False)])
+        vals_list = {'status': True, 'check_out_status': 'auto', 'check_out_time': datetime.datetime.now()}
+        chekout_visitor_not.write(vals_list)
+
     visitor_name = fields.Many2one('visitor_management.visitor', string='visitor', required=True)
     check_in_time = fields.Datetime(string="Check in Time")
     check_out_time = fields.Datetime(string="Check out Time")

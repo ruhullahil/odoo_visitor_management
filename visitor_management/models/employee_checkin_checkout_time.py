@@ -12,6 +12,12 @@ class EmployeeCheckinCheckoutTime(models.Model):
         ('manual', 'Manual')
     ]
 
+    def _check_out_employee_corn(self):
+        print("corn work")
+        chekout_employee_not = self.search([('status', '=', False)])
+        vals_list = {'status': True, 'check_out_status': 'auto', 'check_out_time': datetime.datetime.now()}
+        chekout_employee_not.write(vals_list)
+
     @api.model
     def create(self, vals_list):
 

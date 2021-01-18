@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-      <menuitem id="visitor_management.root" name="Visitor" />
-      <menuitem id="visitor_management.node1" name = "Visitor" parent="visitor_management.root" sequence="10" action = "visitor_management.visitor_action"/>
-      <menuitem id="visitor_management.node2" name = "Employee" parent="visitor_management.root" sequence="12" action = "visitor_management.employee_action"/>
-      <menuitem id="visitor_management.node3" name = "Check In" parent="visitor_management.root" sequence="1" />
-      <menuitem id="visitor_management.node4" name = "Check Out" parent="visitor_management.root" sequence="2"/>
-      <menuitem id="visitor_management.node5" name = "Employee" parent="visitor_management.node4" sequence="1" action = "visitor_management.check_out_action"/>
-      <menuitem id="visitor_management.node6" name = "Employee" parent="visitor_management.node3" sequence="1" action = "visitor_management.check_in_action"/>
-      <menuitem id="visitor_management.node7" name = "Visitor" parent="visitor_management.node3" sequence="2" action = "visitor_management.visitor_check_in_action"/>
-      <menuitem id="visitor_management.node8" name = "Visitor" parent="visitor_management.node4" sequence="2" action = "visitor_management.visitor_check_out_action"/>
-      <menuitem id="visitor_management.node9" name = "Report" parent="visitor_management.root" sequence="13"/>
-      <menuitem id="visitor_management.node10" name = "Employee" parent="visitor_management.node9" sequence="1" action = "visitor_management.visitor_management_generate_employee_report"/>
-      <menuitem id="visitor_management.node11" name = "Visitor" parent="visitor_management.node9" sequence="2" action = "visitor_management.visitor_management_generate_visitor_report"/>
-      <menuitem id="visitor_management.node12" name = "Time Slot" parent="visitor_management.root" sequence="14" action = "visitor_management.timeslot_action"/>
-      <menuitem id="visitor_management.node13" name = "Booked" parent="visitor_management.root" sequence="14" action = "visitor_management.booked_action"/>
+      <menuitem id="visitor_management.root" name="Visitor" groups="visitor_management.group_visitor_management_admin,visitor_management.group_visitor_management_others,visitor_management.group_visitor_management_keeper,visitor_management.group_visitor_management_employee"/>
+      <menuitem id="visitor_management.node1" name = "Visitor" parent="visitor_management.root" sequence="10" action = "visitor_management.visitor_action" groups="visitor_management.group_visitor_management_admin,visitor_management.group_visitor_management_keeper,visitor_management.group_visitor_management_employee,visitor_management.group_visitor_management_others"/>
+      <menuitem id="visitor_management.node2" name = "Employee" parent="visitor_management.root" sequence="12" action = "visitor_management.employee_action" groups="visitor_management.group_visitor_management_admin"/>
+      <menuitem id="visitor_management.node3" name = "Check In" parent="visitor_management.root" sequence="1" groups="visitor_management.group_visitor_management_admin,visitor_management.group_visitor_management_keeper"/>
+      <menuitem id="visitor_management.node4" name = "Check Out" parent="visitor_management.root" sequence="2" groups="visitor_management.group_visitor_management_admin,visitor_management.group_visitor_management_keeper"/>
+      <menuitem id="visitor_management.node5" name = "Employee" parent="visitor_management.node4" sequence="1" action = "visitor_management.check_out_action" groups="visitor_management.group_visitor_management_admin,visitor_management.group_visitor_management_keeper"/>
+      <menuitem id="visitor_management.node6" name = "Employee" parent="visitor_management.node3" sequence="1" action = "visitor_management.check_in_action" groups="visitor_management.group_visitor_management_admin,visitor_management.group_visitor_management_keeper"/>
+      <menuitem id="visitor_management.node7" name = "Visitor" parent="visitor_management.node3" sequence="2" action = "visitor_management.visitor_check_in_action" groups="visitor_management.group_visitor_management_admin,visitor_management.group_visitor_management_keeper"/>
+      <menuitem id="visitor_management.node8" name = "Visitor" parent="visitor_management.node4" sequence="2" action = "visitor_management.visitor_check_out_action" groups="visitor_management.group_visitor_management_admin,visitor_management.group_visitor_management_keeper"/>
+      <menuitem id="visitor_management.node9" name = "Report" parent="visitor_management.root" sequence="13" groups="visitor_management.group_visitor_management_admin" />
+      <menuitem id="visitor_management.node10" name = "Employee" parent="visitor_management.node9" sequence="1" action = "visitor_management.visitor_management_generate_employee_report" groups="visitor_management.group_visitor_management_admin,"/>
+      <menuitem id="visitor_management.node11" name = "Visitor" parent="visitor_management.node9" sequence="2" action = "visitor_management.visitor_management_generate_visitor_report" groups="visitor_management.group_visitor_management_admin"/>
+      <menuitem id="visitor_management.node12" name = "Time Slot" parent="visitor_management.root" sequence="14" action = "visitor_management.timeslot_action" groups="visitor_management.group_visitor_management_admin,visitor_management.group_visitor_management_employee"/>
+      <menuitem id="visitor_management.node13" name = "Booked" parent="visitor_management.root" sequence="14" action = "visitor_management.booked_action" groups="visitor_management.group_visitor_management_admin,visitor_management.group_visitor_management_keeper,visitor_management.group_visitor_management_employee"/>
 
 
 

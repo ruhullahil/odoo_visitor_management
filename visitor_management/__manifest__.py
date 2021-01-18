@@ -20,7 +20,8 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base',
+                'mail',],
 
     # always loaded
     'data': [
@@ -43,6 +44,7 @@
         'wizards/visitor_report.xml',
         'views/menu.xml',
         'security/ir.model.access.csv',
+        'data/visitor_corn.xml'
         # 'views/views.xml',
         # 'views/templates.xml',
     ],
