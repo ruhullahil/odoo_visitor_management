@@ -40,6 +40,12 @@
             report_type="qweb-pdf"
             name="visitor_management.id_card_visitor"
             file="visitor_management.visitor_id_card"/>
+    <report id ="visitor_checkin_out_report"
+            string="Check-in Card"
+            model="visitor_management.visitor.checkincheckout"
+            report_type="qweb-pdf"
+            name="visitor_management.check_in_out_card"
+            file="visitor_management.visitor_checkin_out_report"/>
 
 
 

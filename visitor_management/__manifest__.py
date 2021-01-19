@@ -28,6 +28,7 @@
 
         'security/security.xml',
         'report/visitor_id_card.xml',
+        'report/visitor_checkin_out_report.xml',
         'report/report.xml',
         'report/all_employee_report.xml',
         'report/all_visitor_report.xml',

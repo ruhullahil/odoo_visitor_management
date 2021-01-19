@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="check_in_out_card">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="o">
+                    <br></br>
+                    <t>
+                      <div class="page">
+                          <div class="row mt32 mb32">
+                              <div class="col-8">
+                                  <h5> <b>Name :</b> <t t-esc="o.visitor_name.visitor_name"/></h5>
+                                  <h5> <b>Phone :</b> <t t-esc="o.visitor_name.phone_number"/></h5>
+                              </div>
+                              <div class="col-4 text-left">
+                                  <h5> <b>Address :</b> <t t-esc="o.visitor_name.address"/></h5>
+                                  <h5> <b>Address :</b> <t t-esc="o.visitor_name.email"/></h5>
+                              </div>
+
+
+                          </div>
+                      </div>
+                    </t>
+                    <br></br>
+                        <table class="table" style="border: .01px solid black ">
+                                <tr>
+                                    <td width="30%">
+                                        <p>Services</p>
+                                    </td>
+                                    <td name="td_amount_untaxed" class="text-right">
+                                        <p>Cost</p>
+                                    </td>
+                                </tr>
+                                <t t-foreach="o.extra_services" t-as="cio">
+                                    <tr>
+                                        <td>
+                                            <p t-field="cio.services"  />
+                                        </td>
+                                        <td name="td_amount_untaxed" class="text-right">
+                                            <p t-field="cio.cost" sum="cio.cost_sum" />
+                                        </td>
+                                    </tr>
+                                </t>
+                            <tr class="border-black o_subtotal" style="">
+                                <td name="td_amount_untaxed_label"><strong>Total</strong></td>
+                                <td name="td_amount_untaxed" class="text-right">
+                                    <span t-esc="sum(l.cost for l in o.extra_services)"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Paid</strong></td>
+                                <td name="td_amount_untaxed" class="text-right"><t t-esc="sum(l.cost for l in o.extra_services.filtered(lambda x: x.is_paid))" /></td>
+                            </tr>
+                            <tr class="border-black o_subtotal" style="">
+                                <td name="td_amount_untaxed_label"><strong>Due</strong></td>
+                                <td name="td_amount_untaxed" class="text-right">
+                                    <span t-esc="sum(l.cost for l in o.extra_services.filtered(lambda x: not x.is_paid))"/>
+                                </td>
+                            </tr>
+
+                        </table>
+<!--                        <h5><strong>Total:</strong>""<t t-esc="sum(l.cost for l in o.extra_services) " /></h5>-->
+<!--                        <h5></h5>-->
+<!--                        <h5><strong>Paid:</strong></h5>-->
+<!--                        <h5><t t-esc="sum(l.cost for l in o.extra_services.filtered(lambda x: x.is_paid))" /></h5>-->
+
+<!--                        <t t-esc="sum(l.cost for l in o.extra_services.filtered(lambda x: not x.is_paid))" />-->
+
+
+                </t>
+            </t>
+
+        </t>
+    </template>
+</odoo>

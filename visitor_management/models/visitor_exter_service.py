@@ -5,9 +5,9 @@ class VisitorExtersServices(models.Model):
     _name = 'visitor_management.extra_services'
     _description = 'check in extra services'
 
-    baggage_type_selector = [('big', 'Big'), ('small', 'Small'), ('others', 'Others')]
+    service_selector = [('baggage', 'Baggage'), ('food', 'Food'), ('drinks', 'Drinks'), ('others', 'Others')]
     check_in_slot = fields.Many2one('visitor_management.visitor.checkincheckout', string='Check in')
-    have_any_baggage = fields.Boolean(string='Baggage ', default=False)
-    baggage_type = fields.Selection(baggage_type_selector, default='small', string='Baggage Type')
-    baggage_store_token = fields.Char(string='Baggage Token')
-    want_lunch = fields.Boolean(string='Lunch', default=False)
+    services = fields.Selection(service_selector, string="Services")
+    cost = fields.Float(string='Cost')
+    is_paid = fields.Boolean(string='is paid')
+    remarks = fields.Char(string='Remarks')
