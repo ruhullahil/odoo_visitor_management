@@ -13,8 +13,8 @@
                         <field name="phone"/>
                         <field name="come_from"/>
                         <field name="purpose"/>
-                        <field name="check_in_time"/>
-                        <field name="check_in_status"/>
+                        <field name="check_in_time" invisible="1"/>
+                        <field name="check_in_status" invisible="1" />
                     </group>
                     <notebook>
                         <page string="Meeting">
