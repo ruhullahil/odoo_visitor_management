@@ -27,6 +27,9 @@
                 <sheet>
                          <group >
                             <field name="visitor_name"/>
+                            <field name="email"/>
+                            <field name="phone"/>
+                            <field name="image" widget="image"/>
 
                             <field name="check_in_time" invisible="1"/>
                         </group>

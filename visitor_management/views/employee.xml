@@ -76,7 +76,7 @@
                             <field name="e_id"/>
                             <field name="department"/>
                             <field name="employee_ref_user"/>
-                            <field name="e_image" widget="image" class="oe_avatar"/>
+                            <field name="e_image" widget="image" />
                         </group>
                         <group>
                             <field name="e_name"/>

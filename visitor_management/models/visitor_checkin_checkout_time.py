@@ -50,6 +50,9 @@ class VisitorCheckinCheckoutTime(models.Model):
         chekout_visitor_not.write(vals_list)
 
     visitor_name = fields.Many2one('visitor_management.visitor', string='visitor', required=True)
+    email = fields.Char(string='email', related='visitor_name.email')
+    phone = fields.Char(string='phone', related='visitor_name.phone_number')
+    image = fields.Binary(string="Image", attachment=True)
     check_in_time = fields.Datetime(string="Check in Time")
     check_out_time = fields.Datetime(string="Check out Time")
     status = fields.Boolean(string='Is checkout ', default=False)

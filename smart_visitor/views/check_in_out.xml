@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="check_in_out_form" model="ir.ui.view">
+        <field name="name">Check In Out</field>
+        <field name="model">visitor.check.in.out</field>
+        <field name="arch" type="xml">
+            <form string="Check IN Out">
+                <sheet>
+                    <group>
+                        <field name="is_internal"/>
+                        <field name="visitor_name"/>
+                        <field name="email"/>
+                        <field name="phone"/>
+                        <field name="come_from"/>
+                        <field name="purpose"/>
+                        <field name="check_in_time"/>
+                        <field name="check_in_status"/>
+                    </group>
+                    <notebook>
+                        <page string="Meeting">
+                             <group>
+                            <field name="visitor_booked">
+                                    <tree editable="bottom">
+<!--                                        <field name="sequence" widget="handle"/>-->
+<!--                                        <field name="visitor_booked" invisible="1"/>-->
+                                        <field name="employees" widget="many2many_tags"/>
+                                        <field name="visitors" widget="many2many_tags"/>
+                                        <field name="date"/>
+                                        <field name="start_time"/>
+                                        <field name="end_time"/>
+                                    </tree>
+                                    <group>
+                                        <field name="meeting_note"/>
+                                    </group>
+                            </field>
+                        </group>
+
+                        </page>
+                    </notebook>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+    <record id="check_in_out_action" model="ir.actions.act_window">
+        <field name="name">User Check In Out</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">visitor.check.in.out</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Manage CHeck In out !!
+          </p>
+        </field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="user_check_in_out" name="Check In Out" parent="smart_visitor_root" action="check_in_out_action" sequence="2"/>
+</odoo>

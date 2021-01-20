@@ -16,4 +16,4 @@ class DateTimeSlot(models.Model):
     start_time = fields.Float(string='Start Time')
     end_time = fields.Float(string='End Time')
     employee_slot = fields.Many2one('visitor_management.employee',
-                                     string='Employee available')
+                                    string='Employee available')

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="user_form" model="ir.ui.view">
+        <field name="name">User Details</field>
+        <field name="model">smart_visitor</field>
+        <field name="arch" type="xml">
+            <form string="Users">
+                <sheet>
+                    <group>
+                        <field name="is_internal"/>
+                        <field name="user_name"/>
+                        <field name="phone_number"/>
+                        <field name="email"/>
+                        <field name="dept" attrs="{'invisible':[('is_internal', '=',False)]}"/>
+                        <field name="deg" attrs="{'invisible':[('is_internal', '=',False)]}"/>
+                        <field name="emp_id" attrs="{'invisible':[('is_internal', '=',False)]}"/>
+                        <field name="address"/>
+                        <field name="image" widget="image"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="user_action" model="ir.actions.act_window">
+        <field name="name">Users</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">smart_visitor</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Add your User !!
+            </p>
+        </field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="smart_visitor_root" name="SMART VISITOR" action="user_action" sequence="1"/>
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_smart_visitor,smart_visitor.user,model_smart_visitor,,1,1,1,1
+access_user_checkinout,smart_visitor.check_in_out,model_visitor_check_in_out,,1,1,1,1
+access_user_booked,smart_visitor.booked,model_booked_schedule,,1,1,1,1
