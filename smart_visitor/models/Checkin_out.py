@@ -13,8 +13,8 @@ class VisitorCheckInOut(models.Model):
     #             rec.visitor_name = self.env['smart_visitor'].search([('is_internal', '=', True)])
     #         rec.visitor_name = self.env['smart_visitor'].search([('is_internal', '=', False)])
 
-    is_internal = fields.Boolean(string='Internal', default=True, required=True)
-    visitor_name = fields.Many2one('smart_visitor', string='Visitor Name')
+    is_internal = fields.Boolean(string='Internal', )
+    visitor_name = fields.Many2one('smart_visitor', string='Visitor Name',domain="[('is_internal','=',is_internal)]")
     email = fields.Char(related='visitor_name.email', string='Email')
     phone = fields.Char(related='visitor_name.phone_number', string='Phone')
     come_from = fields.Char(string='Come From')
