@@ -27,10 +27,12 @@ class VisitorCheckInOut(models.Model):
 
         print(vals_list)
         print(vals_list['visitor_booked'][0][2])
-        booked_list = self.env['booked.schedule'].search([('date', '=', vals_list['visitor_booked'][0][2]['date']), '|',(
-            'start_time', '>=', vals_list['visitor_booked'][0][2]['start_time']),
-                                                          ('end_time', '<=',
-                                                           vals_list['visitor_booked'][0][2]['end_time'])])
+        booked_list = self.env['booked.schedule'].search(
+            ['&', '|', '&', ('start_time', '>=', vals_list['visitor_booked'][0][2]['start_time']), (
+                'start_time', '<=', vals_list['visitor_booked'][0][2]['end_time']), '&', (
+                 'end_time', '>=', vals_list['visitor_booked'][0][2]['start_time']), (
+                 'end_time', '<=', vals_list['visitor_booked'][0][2]['end_time']),
+             ('date', '=', vals_list['visitor_booked'][0][2]['date'])])
         print(booked_list)
         booked_eployees = set()
         for booked in booked_list:
@@ -47,6 +49,13 @@ class VisitorCheckInOut(models.Model):
 
         records = super(VisitorCheckInOut, self).create(vals_list)
         return records
+
+    def check_out(self):
+        vals = {
+            'check_out_time': datetime.datetime.now(),
+            'check_in_status': False
+        }
+        self.write(vals)
 
     is_internal = fields.Boolean(string='Internal', )
     visitor_name = fields.Many2one('smart_visitor', string='Visitor Name', domain="[('is_internal','=',is_internal)]")
